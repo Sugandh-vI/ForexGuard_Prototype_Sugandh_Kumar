@@ -1,5 +1,10 @@
 # 🚀 ForexGuard Prototype — Real-Time Anomaly Detection Engine
 
+
+## 🌐 Live Demo
+
+👉 Try it here: https://forexguard-prototype-sugandh-kumar.onrender.com/docs
+
 ## 📌 Overview
 
 ForexGuard is a production-grade real-time anomaly detection system designed to identify suspicious trader behavior in a forex brokerage environment.
@@ -21,6 +26,36 @@ It uses **unsupervised machine learning + streaming architecture** to generate *
 * Generate **human-readable alerts**
 
 ---
+
+## 🚀 Live API Demo
+
+You can access the deployed ForexGuard API here:
+
+🔗 https://forexguard-prototype-sugandh-kumar.onrender.com/docs
+
+### 📌 How to Use
+
+1. Open the link above
+2. Navigate to the `/score` endpoint
+3. Click on **"Try it out"**
+4. Send events one-by-one in sequence to simulate streaming data
+
+### ⚠️ Note
+
+- The model is **sequence-based (LSTM Autoencoder)** and requires multiple events to detect anomalies.
+- Initial requests may return a message like:
+
+
+- After sufficient events, the API will begin returning anomaly scores.
+
+### ⏳ Cold Start (Render Free Tier)
+
+- The API may take ~30–60 seconds to respond if inactive for some time.
+- This is due to Render's free tier sleep policy.
+
+---
+
+💡 This API simulates real-time anomaly detection in financial transaction streams.
 
 ## 🏗️ System Architecture
 
