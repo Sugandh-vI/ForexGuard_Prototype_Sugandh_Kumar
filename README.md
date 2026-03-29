@@ -158,6 +158,39 @@ Includes ~46 engineered features :
 
 ---
 
+
+### 🤔 Why LSTM Autoencoder?
+
+We use an **LSTM Autoencoder** because user behavior in financial systems is inherently **sequential and time-dependent**.
+
+Traditional models (like Isolation Forest) treat each event independently, which limits their ability to capture **temporal patterns** such as gradual behavioral drift, sudden spikes, or unusual sequences of actions.
+
+#### ✅ Key Reasons for Choosing LSTM Autoencoder:
+
+- **📈 Captures Temporal Dependencies**  
+  LSTMs are designed for sequence data, allowing the model to understand how past events influence future behavior.
+
+- **🧩 Learns Normal Behavior (Unsupervised)**  
+  The model is trained only on *normal* user activity, learning patterns without requiring labeled anomalies.
+
+- **🚨 Detects Anomalies via Reconstruction Error**  
+  The model reconstructs input sequences and measures error:
+reconstruction_error = || original_sequence - reconstructed_sequence ||
+
+If the error exceeds a threshold, the behavior is flagged as anomalous.
+
+- **⚡ Works in Real-Time Systems**  
+Combined with streaming architecture, it evaluates sequences on-the-fly using rolling buffers.
+
+#### 💡 Intuition
+
+If a user behaves normally → low reconstruction error  
+If behavior deviates → high reconstruction error → anomaly  
+
+---
+
+👉 This makes LSTM Autoencoders highly effective for **fraud detection, behavioral monitoring, and time-series anomaly detection**.
+
 ## ⚡ Real-Time Streaming
 
 Implemented using Kafka-compatible Redpanda:
